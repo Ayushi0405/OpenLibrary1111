@@ -4,12 +4,19 @@ from pymongo import MongoClient
 from faker import Faker
 from bson.objectid import ObjectId
 import random
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app)
 
 # Connect to MongoDB using your connection string
-client = MongoClient("mongodb+srv://Ayu:ayuwin@ayushi.bixam.mongodb.net/")
+
+
+load_dotenv()  # Load environment variables from .env
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
+
 db = client.openlibrary  # Use "openlibrary" database
 books_collection = db.books
 

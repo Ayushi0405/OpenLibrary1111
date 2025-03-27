@@ -2,4 +2,4 @@ Flask
 flask-cors
 pymongo
 Faker
-
+python-dotenv
