@@ -3,3 +3,6 @@ flask-cors
 pymongo
 Faker
 python-dotenv
+gunicorn
+waitress
+
